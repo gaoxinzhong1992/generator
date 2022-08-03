@@ -10,24 +10,22 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 </#if>
 <#if entityLombokModel>
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.Builder;
     <#if chainModel>
 import lombok.experimental.Accessors;
     </#if>
 </#if>
 
 /**
- * <p>
  * ${table.comment!}
- * </p>
  *
  * @author ${author}
  * @since ${date}
  */
 <#if entityLombokModel>
-@Getter
-@Setter
+@Data
+@Builder
     <#if chainModel>
 @Accessors(chain = true)
     </#if>

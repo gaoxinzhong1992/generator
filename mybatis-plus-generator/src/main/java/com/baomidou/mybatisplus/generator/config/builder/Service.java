@@ -66,7 +66,7 @@ public class Service implements ITemplate {
      *
      * @since 3.5.0
      */
-    private ConverterFileName converterServiceFileName = (entityName -> "I" + entityName + ConstVal.SERVICE);
+    private ConverterFileName converterServiceFileName = (entityName -> entityName + ConstVal.SERVICE);
 
     /**
      * 转换输出ServiceImpl文件名称
