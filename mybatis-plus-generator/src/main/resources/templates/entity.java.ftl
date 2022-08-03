@@ -31,12 +31,12 @@ import lombok.experimental.Accessors;
     </#if>
 </#if>
 <#if table.convert>
-@TableName("${schemaName}${table.name}")
+@TableName(value = "${schemaName}${table.name}")
 </#if>
 <#if springdoc>
 @Schema(name = "${entity}", description = "$!{table.comment}")
 <#elseif swagger>
-@ApiModel(value = "${entity}对象", description = "${table.comment!}")
+@ApiModel(value = "${entity}", description = "${table.comment!}")
 </#if>
 <#if superEntityClass??>
 public class ${entity} extends ${superEntityClass}<#if activeRecord><${entity}></#if> {
@@ -61,7 +61,7 @@ public class ${entity} {
         <#if springdoc>
     @Schema(description = "${field.comment}")
         <#elseif swagger>
-    @ApiModelProperty("${field.comment}")
+    @ApiModelProperty(value = "${field.comment}")
         <#else>
     /**
      * ${field.comment}
